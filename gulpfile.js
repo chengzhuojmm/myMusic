@@ -7,6 +7,7 @@ var browserSync = require('browser-sync');
 var uglify =require('gulp-uglify');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
+var del = require('del');
 
 var reload = browserSync.reload;
 
@@ -23,7 +24,7 @@ gulp.task('less', function() {
         .pipe(plumber())
         .pipe(less())
         .pipe(minicss())
-        .pipe(gulp.dest("temp"))
+        .pipe(gulp.dest("temp/css"))
         .pipe(reload({stream: true}));
 });
 
@@ -41,7 +42,7 @@ gulp.task('libs',function(){
 });
 
 // 静态服务器 + 监听 less/html/js 文件
-gulp.task('serve', ['less','html','script','libs','image','music'], function() {
+gulp.task('serve', ['clean','less','html','script','libs','image','music'], function() {
 
     browserSync.init({
         server: "./temp"
@@ -49,7 +50,7 @@ gulp.task('serve', ['less','html','script','libs','image','music'], function() {
 
     gulp.watch("src/less/**/*.less", ['less']);
     gulp.watch("src/*.html", ['html']);
-    gulp.watch("src/javascript/**/*.js", ['javascript']);
+    gulp.watch("src/javascript/**/*.js", ['script']);
 });
 
 
@@ -64,8 +65,11 @@ gulp.task('music',function(){
                 .pipe(gulp.dest('temp/music/'));
 });
 
+gulp.task('clean',function(){
+    del.sync(['temp/**','public/**']);
+});
 
-gulp.task('default',['less','html','script','libs','image','music'],function(){
+gulp.task('default',['clean','less','html','script','libs','image','music'],function(){
     return gulp.src('temp/**')
                 .pipe(gulp.dest('public/'));
 });

@@ -1,0 +1,90 @@
+// 重置样式all-music
+@import "../libs/normalize-css/normalize.css";
+html,
+body{
+    height: 100%;
+    article{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+}
+
+
+
+.menubar{
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+    width: 100%;
+    ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: #f9f9f9;
+        border-top: 1px solid #f1f1f1;
+        height: 10vh;
+        li{
+            flex:1 0 0;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    }
+}
+
+
+.main-page,
+.player,
+.all-music{
+    width: 100%;
+    position: absolute;
+    transition: all .3s ease;
+}
+.main-page{
+    min-height: 100%;
+    background: rgb(171, 246, 132);
+    z-index:10;
+    transform: translate(0,0);
+}
+.player{
+    min-height: 100%;
+    background: rgb(180, 92, 112);
+    transform: translate(100%,0);
+    z-index: 500;
+}
+.all-music{
+    min-height: 100%;
+    background: rgb(106, 231, 156);
+    transform: translate(-100%,0);
+    z-index: 20;
+}
+
+.show{
+    transform: translate(0,0);
+}
+
+#currentplay{
+    position: absolute;
+    top:0;
+    right:10px;
+    z-index: 400;
+    display: block;
+    height: 50px;
+    width: 50px;
+    background: rgb(236, 186, 50);
+}
+#back{
+    position: absolute;
+    top:0;
+    left:10px;
+    z-index: 600;
+    display: block;
+    height: 50px;
+    width: 50px;
+    background: rgb(87, 221, 51);
+}

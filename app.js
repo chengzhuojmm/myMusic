@@ -29,10 +29,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/',function(req,res){
 	// 客户端是桌面版，引导向index.html页面
 	if(req.useragent.isDesktop){
-		res.send('浏览器端登录');
+		res.redirect('/desktop.html');
 	}else if(req.useragent.isMobile){
 	// 客户端是移动设备，应该引导向手机主页
-		res.send('移动端登录');
+		res.redirect('/mobile.html');
 	}
 });
 
