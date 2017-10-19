@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./libs/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./libs/bootstrap/dist/css/bootstrap.min.css.map"/>
+    <link rel="stylesheet" href="./libs/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="./libs/bootstrap/dist/css/bootstrap-theme.min.css.map"/>
+</head>
+<body>
+<article>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">NEWS EDITOR</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="form-group has-feedback">
+                                    <label for="musicName">music name</label>
+                                    <input type="text" class="form-control" id="musicName" placeholder="音乐名">
+                                    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label for="album">album</label>
+                                    <input type="text" class="form-control" id="album" placeholder="专辑">
+                                    <span class="glyphicon glyphicon-star form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label for="author">author</label>
+                                    <input type="text" class="form-control" id="author" placeholder="作者">
+                                    <span class="glyphicon glyphicon-th-large form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label for="music-img">music-img</label>
+                                    <input type="text" class="form-control" id="music-img" placeholder="图片">
+                                    <span class="glyphicon glyphicon-tint form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label for="music-src">music-src</label>
+                                    <input type="text" class="form-control" id="music-src" placeholder="路径">
+                                    <span class="glyphicon glyphicon-tree-deciduous form-control-feedback"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<script src="./libs/jquery/dist/jquery.min.js"></script>
+<script>
+
+   $('#submit').click(function(){
+       var data={};
+       data.musicname=$('#musicName').val();
+       data.author=$('#author').val();
+       data.album=$('#album').val();
+       data.musicimg=$('#music-img').val();
+       data.musicsrc=$('#music-src').val();
+       $.ajax({
+           url:'/houtai/getmusic',
+           type:'post',
+           data:data,
+           success:function(data){
+               console.log('成功');
+           },
+           error:function(err){
+               console.log(err);
+           }
+       })
+   })
+</script>
+</body>
+</html>

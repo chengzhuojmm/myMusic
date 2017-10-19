@@ -1,0 +1,83 @@
+@import "../libs/normalize-css/normalize.css";
+html,
+body {
+  height: 100%;
+}
+html article,
+body article {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+.menubar {
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  width: 100%;
+}
+.menubar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+  border-top: 1px solid #f1f1f1;
+  height: 10vh;
+}
+.menubar ul li {
+  flex: 1 0 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+.main-page,
+.player,
+.all-music {
+  width: 100%;
+  position: absolute;
+  transition: all .3s ease;
+}
+.main-page {
+  min-height: 100%;
+  background-color: #ffd;
+  z-index: 10;
+  transform: translate(0, 0);
+}
+.player {
+  min-height: 100%;
+  background: #b45c70;
+  transform: translate(100%, 0);
+  z-index: 500;
+}
+.all-music {
+  min-height: 100%;
+  background: #6ae79c;
+  transform: translate(-100%, 0);
+  z-index: 20;
+}
+.show {
+  transform: translate(0, 0);
+}
+#currentplay {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 400;
+  display: block;
+  height: 50px;
+  width: 50px;
+  background: #ecba32;
+}
+#back {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  z-index: 600;
+  display: block;
+  height: 50px;
+  width: 50px;
+  background: #57dd33;
+}
