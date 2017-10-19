@@ -1,42 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/mobile.css">
-</head>
-<body>
-    <article class="container">
-        <span id="currentplay">
 
-        </span>
-        <section class="main-page">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <!--<link rel="stylesheet" href="./css/mobile.css">-->
+        <link rel="stylesheet" href="./libs/normalize-css/normalize.css" />
 
-        </section>
-        <section class="player">
-            <span id="back">
+        <link rel="stylesheet" href="./css/mystyle.css" />
+    </head>
 
-            </span>
-        </section>
-        <section class="all-music">
+    <body>
+        <article class="container">
+            <!--<span id="currentplay">-->
+            <!--</span>-->
+            <section class="main-page" style="background-color:#ffd;">
+                <div class="main-page-header">
+                    <div>
+                        <ul class="ulOne clear">
+                            <li><i class="iconfont" style="font-size: 2rem" id="back">&#xe632;</i></li>
+                            <li>歌单</li>
+                            <li><i class="iconfont" style="font-size: 2rem">&#xe614;</i></span>
+                            </li>
+                            <li><i class="iconfont" style="font-size: 2rem" id="goPlayer">&#xe649;</i></li>
+                        </ul>
+                    </div>
 
-        </section>
-        <section class="menubar">
-            <ul>
-                <li id="allmusic">发现音乐</li>
-                <li id="mymusic">我的音乐</li>
-                <li>朋友</li>
-                <li id="signin">帐号</li>
-            </ul>
-        </section>
-    </article>
-    <script src="./libs/zepto.js/dist/zepto.js" charset="utf-8"></script>
-    <script src="./libs/zepto.js/src/touch.js" charset="utf-8"></script>
-    <script src="./javascript/mobile.js" charset="utf-8"></script>
-    <script type="text/javascript" src="./javascript/player.js">
+                    <div class="clear myLove">
+                        <div class="playlistImg"><img src="images/playlistImg.jpg" alt="" /><i class="iconfont heart">&#xe678;</i><i class="iconfont text">&#xe66d;<span>1234</span></i></div>
+                        <div class="user">
+                            <h2>我喜欢的音乐</h2>
+                            <div class="clear" style="padding-top: 1rem">
+                                <div class="userIcon"><img src="images/userIcon.jpg" alt="" /></div><span style="line-height:2.5rem ">&nbsp;碎纸片儿&nbsp;&gt;</span></div>
+                        </div>
+                    </div>
 
-    </script>
-</body>
+                    <div class="clear">
+                        <ul class="loveList clear">
+                            <li><i class="iconfont">&#xe600;</i>
+                                <p>收藏</p>
+                            </li>
+                            <li><i class="iconfont">&#xe641;</i>
+                                <p>评论</p>
+                            </li>
+                            <li><i class="iconfont">&#xe7da;</i>
+                                <p>分享</p>
+                            </li>
+                            <li><i class="iconfont">&#xe67f;</i>
+                                <p>下载</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="main-page-article">
+                    <div class="list-header clear">
+                        <i class="iconfont list_left" style="line-height: 3rem">&#xe602;</i>
+                        <div class="list_right">
+                            <h3>播放全部<span style="font-size: 1rem;color: #c4c4c5;font-weight: 500">(全部<span id="allLove"></span>首)</span><i class="iconfont icon_right">&#xe698;</i></h3></div>
+                    </div>
+                    <ul class="list_content clear" id="main-page-article-ul">
+                        <!--<li class="clear"><span class="list_left" style="color:#b0b0b1; ">1</span>-->
+                        <!--<div class="list_content_right">-->
+                        <!--<h3 style="float: left">Gift Of Life <p><span>名字</span>-<span>专辑</span></p></h3>-->
+                        <!--<i class="iconfont list_content_right_icon">&#xe641;</i>-->
+                        <!--</div>-->
+                        <!--</li>-->
+
+                    </ul>
+                </div>
+            </section>
+
+
+
+            <section class="player">
+                <div class="player-background"></div>
+                <div style="width: 100%;height: 100%;background: rgba(34, 30, 31, 0.62);position: absolute;z-index: 460">
+                    <div class="clear" style="padding: 10px 10px 0 10px"><i id="player_back" class="list_left iconfont" style="color:#b0b0b1; line-height:3rem">&#xe632;</i>
+                        <div class="list_content_right" id="player_title">
+                            <!--<h2 style="float: left">Gift Of Life <p style="font-size: 1rem"><span>名字</span>-<span>专辑</span></p></h2>-->
+                            <!--<i class="iconfont list_content_right_icon">&#xe7da;</i>-->
+                        </div>
+                    </div>
+                    <div class="play clear">
+                        <!--<div class="player_play clear"><img src="./images/4.png" alt=""/></div>-->
+                        <!--<div class="player_img clear"><img src="./images/m1.jpg" class="clear" alt=""/></div>-->
+                    </div>
+
+                    <div class="player_list">
+                        <ul class="clear">
+                            <li><i class="iconfont">&#xe678;</i></li>
+                            <li><i class="iconfont">&#xe67f;</i></li>
+                            <li><i class="iconfont">&#xe641;</i></li>
+                            <li><i class="iconfont">&#xe766;</i></li>
+                        </ul>
+
+                        <div class="player_control clear f_video">
+                            <audio id="audio" autoplay>
+
+                        </audio>
+
+
+                            <div class="m_press clear">
+                                <!-- 进度时间 -->
+                                <span id="j-currenttime">00:00</span>
+                                <!-- 进度条 -->
+                                <div class="m_bar">
+                                    <div class="m_load"></div>
+                                    <div class="m_plan" id="j-press">
+                                        <div class="m_plan_ctr j-planbtn"></div>
+                                    </div>
+                                </div>
+                                <!-- 视频长度 -->
+                                <span id="j-alltime">00:00</span>
+                            </div>
+
+
+                            <ul class="clear">
+                                <li><i class="iconfont xunhuang" id="playType">&#xe623;</i></li>
+                                <li><i class="iconfont" id="playPrev">&#xe668;</i></li>
+                                <li><i class="iconfont" id="playPause">&#xe647;</i></li>
+                                <li><i class="iconfont" id="playNext">&#xe604;</i></li>
+                                <li><i class="iconfont" id="playList">&#xe637;</i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </section>
+
+            <!-- 所有音乐-->
+            <section class="all-music">
+                <div class="all-music-header">
+                    <h4><i class="iconfont">&#xe61f;</i><span>我收藏的歌单(<span id="listNum"></span>)首</span><i class="iconfont" style="float: right" id="goMainpage">&#xe649;</i></h4>
+                </div>
+                <ul class="list-header clear" id="all-music-ul">
+                    <!--<li class="clear">-->
+                    <!--<div class="musicList_left"><img src="./images/a1.jpg" alt=""/></div>-->
+                    <!--<div class="list_content_right" style="width: 73vw;height: 3.5rem;padding: .5rem;">-->
+                    <!--<h2 style="float: left">Gift Of Life <p>Thomas</p></h2>-->
+                    <!--<i class="iconfont list_content_right_icon">&#xe766;</i>-->
+                    <!--</div>-->
+                    <!--</li>-->
+
+
+                </ul>
+            </section>
+
+            <section class="footer clear">
+                <ul class="clear">
+                    <li><i class="iconfont footer_icon">&#xe612;</i>
+                        <p class="footer_text">发现音乐</p>
+                    </li>
+                    <li><i class="iconfont footer_icon" style="color: red">&#xe66d;</i>
+                        <p class="footer_text" style="color: red">我的音乐</p>
+                    </li>
+                    <li><i class="iconfont footer_icon">&#xe618;</i>
+                        <p class="footer_text">朋&nbsp;友</p>
+                    </li>
+                    <li id="myAccount"><i class="iconfont footer_icon">&#xe619;</i>
+                        <p class="footer_text">账&nbsp;号</p>
+                    </li>
+                </ul>
+
+            </section>
+
+            <div class="account">
+                <p class="account_header" style="color: white;"><i class="iconfont" id="back2">&#xe632;</i><span style="font-size: 1.2rem">用户登录/注册</span></p>
+                <div class="account_content">
+                  <p> <input type="text" id="username" class="input_type" height="4vh" placeholder=" 用户名" style="border-radius: 3px 3px 0 0;"/></p>
+                  <p> <input type="password" id="password" class="input_type" height="4vh" placeholder=" 密码" style="border-radius: 0 0 3px 3px; margin-top: -1px"/></p>
+                    <button id="submit">登录/注册</button>
+                </div>
+            </div>
+
+
+            <div class="deletePage" style="text-align: center">
+                <p style="margin-top: 1vh"><button id="deleteBtn" class="input_type" style="width: 60%">要删除这首歌曲吗</button>&nbsp;&nbsp;<button id="cancel" class="input_type" style="width: 18%">取消</button></p>
+            </div>
+
+        </article>
+        <script src="./libs/zepto.js/dist/zepto.js" charset="utf-8"></script>
+        <script src="./libs/zepto.js/src/touch.js" charset="utf-8"></script>
+        <script src="./javascript/mobile.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./javascript/player.js">
+        </script>
+        <!--<script src="./libs/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    </body>
+
 </html>
