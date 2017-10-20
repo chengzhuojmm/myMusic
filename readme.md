@@ -14,18 +14,22 @@ $ npm start
 /
 app.js      # 主入口
 public/     # 静态文件
+    css/
     images/
-    style/
     javascript/
+    libs/
     music/
 routes/     # 路由文件夹
 modules/    # 模块文件夹
 src/        # 前端源代码
-    index.html
-    less/
-    javascript/
     images/
+    javascript/
+    less/
+    libs/
     music/
+    desktop.html #音乐网页版（未开发完）
+    houtai.html  #后台网页
+    mobile.html  #音乐移动端
 temp/       # 开发用服务器临时文件夹
 
 ```
@@ -51,5 +55,5 @@ temp/       # 开发用服务器临时文件夹
 *这部分功能逻辑过于复杂，设置为选做，[参考资料](http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html)*
 
 #### 效果图
-![image](https://github.com/chengzhuojmm/myMusic/blob/master/demo1.gif)
+![image](https://github.com/chengzhuojmm/myMusic/blob/master/gif/demo1.gif)
 ![image](https:github.com/chengzhuojmm/myMusic/gif/demo2.gif)
