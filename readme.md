@@ -49,3 +49,7 @@ temp/       # 开发用服务器临时文件夹
 6. 自动播放下一首的设计思路是在audio 的 ended 事件触发时修改src为新的歌曲，并且执行播放。参考audio标签的[事件列表](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events)
 5. 如果考虑后端安全性保存用户登录状态需要用到的功能为session，相当于服务器端的cookie，需要用到的库为express-session，[快速访问](https://www.npmjs.com/package/express-session)
 *这部分功能逻辑过于复杂，设置为选做，[参考资料](http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html)*
+
+#### 效果图
+![image](https:github.com/chengzhuojmm/myMusic/demo1.gif)
+![image](https:github.com/chengzhuojmm/myMusic/demo2.gif)
