@@ -51,5 +51,5 @@ temp/       # 开发用服务器临时文件夹
 *这部分功能逻辑过于复杂，设置为选做，[参考资料](http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html)*
 
 #### 效果图
-![image](https:github.com/chengzhuojmm/myMusic/demo1.gif)
-![image](https:github.com/chengzhuojmm/myMusic/demo2.gif)
+![image](https:github.com/chengzhuojmm/myMusic/gif/demo1.gif)
+![image](https:github.com/chengzhuojmm/myMusic/gif/demo2.gif)
