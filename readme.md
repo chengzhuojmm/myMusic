@@ -56,4 +56,4 @@ temp/       # 开发用服务器临时文件夹
 
 #### 效果图
 ![image](https://github.com/chengzhuojmm/myMusic/blob/master/gif/demo1.gif)
-![image](https:github.com/chengzhuojmm/myMusic/gif/demo2.gif)
+![image](https:github.com/chengzhuojmm/myMusic/blob/master/gif/demo2.gif)
